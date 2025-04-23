@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soil Classification & Color Detection</title>
+    <link rel="stylesheet" href="crop.css">
+</head>
+<body>
+    <div id="container">
+        <h2>🌱 Soil Type & Color Detector</h2>
+        <button onclick="document.getElementById('upload-input').click()">📷 Select Image</button>
+        <input type="file" id="upload-input" accept="image/*" onchange="uploadImage(event)">
+        <button onclick="startCamera()">📸 Capture Image</button>
+        <video id="camera" autoplay></video>
+        <canvas id="canvas" style="display: none;"></canvas>
+        <button id="capture-btn" style="display: none;" onclick="captureImage()">📷 Capture</button>
+        <div id="image-container"></div>
+
+
+        <!-- <div id="color-container">🌈 Dominant Color: N/A</div> -->
+        <div id="label-container">🔍 Prediction: N/A</div>
+        <div id="ph-container">🧪 Estimated Soil pH: N/A</div>
+        <div id="npk-container">🌾 NPK values will be displayed here.</div>
+        <div id="crop-container">🌾 Recommended Crops: N/A</div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+    <script src="datasetpH.js"></script>
+    <script src="crop.js"></script>
+</body>
+</html>

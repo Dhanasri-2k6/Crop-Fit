@@ -1,0 +1,187 @@
+* Reset & Global Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(120deg, #ff9a9e, #fad0c4);
+    animation: gradientBG 6s ease infinite alternate;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Animated Background */
+@keyframes gradientBG {
+    0% { background: linear-gradient(120deg, #ff9a9e, #fad0c4); }
+    100% { background: linear-gradient(120deg, #a18cd1, #fbc2eb); }
+}
+
+/* Logo Styling */
+.top img {
+    height: 120px;
+    transition: transform 0.3s;
+}
+
+.top img:hover {
+    transform: scale(1.1);
+}
+
+/* Animated Title */
+.animated-title {
+    font-size: 4rem;
+    font-weight: bold;
+    text-align: center;
+    color: #222;
+    text-shadow: 3px 3px 10px rgba(0,0,0,0.3);
+    animation: bounceTitle 2s infinite alternate ease-in-out;
+}
+
+/* Title Bounce Animation */
+@keyframes bounceTitle {
+    from { transform: translateY(0); }
+    to { transform: translateY(-10px); }
+}
+
+/* Container Styling */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* Context - Image and Text Side by Side */
+.context {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 85%;
+    max-width: 1100px;
+    padding: 20px;
+}
+
+/* Image Styling */
+.context img {
+    width: 380px;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.context img:hover {
+    transform: scale(1.05);
+}
+
+/* Text Styling with Color */
+.context p {
+    font-size: 1.5rem;
+    width: 50%;
+    text-align: justify;
+    line-height: 1.4;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Different colors for each text */
+.context:nth-child(1) p {
+    color: #ff5722; /* Vibrant Orange */
+    background: rgba(255, 87, 34, 0.1);
+}
+
+.context:nth-child(2) p {
+    color: #4CAF50; /* Green */
+    background: rgba(76, 175, 80, 0.1);
+}
+
+.context:nth-child(3) p {
+    color: #3F51B5; /* Deep Blue */
+    background: rgba(63, 81, 181, 0.1);
+}
+
+/* Alternate positioning for even and odd sections */
+.context:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .context {
+        width: 95%;
+    }
+
+    .context img {
+        width: 300px;
+    }
+
+    .context p {
+        width: 55%;
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .context {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .context p {
+        width: 80%;
+        font-size: 1.3rem;
+        text-align: center;
+    }
+
+    .context img {
+        width: 280px;
+    }
+}
+/* Text Fade Effect */
+.fade-text {
+    font-size: 1.5rem;
+    text-align: center;
+    opacity: 0;
+    animation: fadeEffect 4s infinite alternate;
+}
+
+@keyframes fadeEffect {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Buttons */
+.hor {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.continue {
+    padding: 12px 25px;
+    margin: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, #ff7eb3, #ff758c);
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.continue:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+}
+
+.continue a {
+    text-decoration: none;
+    color: white;
+}
