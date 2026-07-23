@@ -3,7 +3,7 @@ const metadataURL = "./my_model/metadata.json";
 let model, labelContainer, maxPredictions;
 let cropData = [];
 // Store crop data globally
-// dhanu 
+
 const soilModelURL = "./soilPredict_model/model.json";
 const soilMetadataURL = "./soilPredict_model/metadata.json";
 let soilModel;
